@@ -32,3 +32,13 @@ Mantenha componentes de interface nas features ou no layout, regras nos serviço
 O layout coordena uma gravação por operação e só atualiza a memória após confirmação. Preserve a revisão por proprietário, a proteção contra salvamentos simultâneos e o encerramento dos formulários ao trocar conta. Nunca use número de chamado para inferir vínculo de ocorrência; use `incidentId`. NA não entra no denominador dos checklists; registro de validade ausente não equivale a zero. Migrações aplicadas são imutáveis.
 
 Em refatorações estruturais, preserve texto, DOM, classes, ordem da cascata CSS, regras e formatos persistidos. Faça extrações incrementais e valide cada responsabilidade movida. Corrija os erros introduzidos antes de considerar a tarefa concluída. Ao finalizar, informe os arquivos alterados, validações executadas e limitações reais.
+
+## Versionamento definido pelo proprietário
+
+Siga o formato **(versão estável).(versão em teste).(miniupdate da versão em teste)**. Esta é a convenção do projeto; não substitua seu significado automaticamente por outra política de versionamento.
+
+- Primeiro número: versão estável. Permanece `0` enquanto a proposta inicial estiver em testes; a primeira versão estável e completa será `1.0.0`.
+- Segundo número: versão em teste. Uma nova versão de teste passa, por exemplo, de `0.1.x` para `0.2.0`.
+- Terceiro número: miniupdates da mesma versão de teste, por exemplo, `0.1.3` → `0.1.4`.
+
+Ao publicar uma nova versão, mantenha `package.json`, a entrada raiz de `package-lock.json`, a tag Git `vX.Y.Z`, README e notas da versão alinhados. Preserve edições do proprietário e o histórico existente; não mova tags já publicadas. A promoção para `1.0.0` só deve ocorrer quando a versão de teste estiver estável e completa em relação à proposta, sem promovê-la apenas porque os testes automatizados passaram. Uma atualização de instruções, por si só, não publica uma nova versão do aplicativo.

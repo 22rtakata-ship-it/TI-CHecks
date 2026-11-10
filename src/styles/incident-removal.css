@@ -1,0 +1,19 @@
+.incident-removal {
+  margin-top: 26px;
+  padding-top: 18px;
+  border-top: 1px solid var(--line);
+}
+.danger-button {
+  color: #ba3737;
+  border-color: #d76c6c55;
+  background: transparent;
+}
+.danger-button:hover {
+  color: #9f2020;
+  border-color: #ba3737;
+  background: #e65d5d0d;
+}
+.incident-removed {
+  opacity: 0.8;
+  border-top-color: var(--muted);
+}

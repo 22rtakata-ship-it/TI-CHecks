@@ -1,0 +1,323 @@
+.validity-daily {
+  margin-top: 24px;
+}
+.validity-daily .section-heading h2 svg {
+  color: var(--accent);
+}
+.validity-inputs {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.validity-inputs input {
+  width: 100%;
+  font-variant-numeric: tabular-nums;
+}
+.validity-form-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.validity-form-footer .form-hint {
+  margin: 0;
+  max-width: 530px;
+}
+.validity-form-footer .primary {
+  flex-shrink: 0;
+}
+.validity-save-notice {
+  color: var(--accent);
+  font-size: 12px;
+  margin: 15px 0 0;
+}
+.validity-readonly-values {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 20px;
+}
+.validity-readonly-values span {
+  display: block;
+  font-size: 12px;
+  color: var(--muted);
+}
+.validity-readonly-values strong {
+  font-size: 24px;
+}
+.validity-page {
+  --validity-expired: #d86c78;
+  --validity-risk: #d5a03d;
+  --validity-unlinked: #688ed6;
+}
+[data-theme="dark"] .validity-page {
+  --validity-expired: #f18b98;
+  --validity-risk: #ebbc64;
+  --validity-unlinked: #8eaff1;
+}
+.validity-page .page-heading .field {
+  min-width: 180px;
+  margin: 0;
+}
+.validity-summary {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.validity-summary .panel {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  min-width: 0;
+}
+.validity-summary svg {
+  color: var(--accent);
+  flex-shrink: 0;
+  margin-top: 4px;
+}
+.validity-summary strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+.validity-summary span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  margin-top: 8px;
+}
+.validity-metric-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.validity-metric-card {
+  min-width: 0;
+}
+.validity-metric-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+  font-weight: 600;
+}
+.validity-metric-label i,
+.validity-legend i {
+  width: 8px;
+  height: 8px;
+  display: inline-block;
+  flex-shrink: 0;
+  border-radius: 2px;
+}
+.validity-metric-card.expired .validity-metric-label i,
+.validity-legend i.expired {
+  background: var(--validity-expired);
+}
+.validity-metric-card.at-risk .validity-metric-label i,
+.validity-legend i.at-risk {
+  background: var(--validity-risk);
+}
+.validity-metric-card.unlinked .validity-metric-label i,
+.validity-legend i.unlinked {
+  background: var(--validity-unlinked);
+}
+.validity-metric-card > strong {
+  display: block;
+  font-size: 35px;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 18px 0 9px;
+  font-variant-numeric: tabular-nums;
+  overflow-wrap: anywhere;
+}
+.validity-metric-card > small {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+}
+.validity-trend {
+  border-top: 1px solid var(--line);
+  padding-top: 14px;
+  margin: 18px 0 10px;
+  font-size: 11px;
+  color: var(--muted);
+}
+.validity-trend.down {
+  color: var(--accent);
+}
+.validity-trend.up {
+  color: #ba682e;
+}
+[data-theme="dark"] .validity-trend.up {
+  color: #ecb17d;
+}
+.validity-chart-panel {
+  margin-bottom: 24px;
+}
+.validity-evolution {
+  margin: 22px 0 0;
+}
+.validity-evolution figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  font-size: 12px;
+  margin-bottom: 20px;
+}
+.validity-evolution figcaption span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.validity-chart-scroll,
+.validity-table-scroll {
+  overflow-x: auto;
+  max-width: 100%;
+}
+.validity-chart {
+  width: 100%;
+  display: block;
+}
+.validity-gridline {
+  stroke: var(--line);
+  stroke-width: 1;
+}
+.validity-axis-label {
+  fill: var(--muted);
+  font:
+    10px Arial,
+    Helvetica,
+    sans-serif;
+}
+.validity-bar.expired {
+  fill: var(--validity-expired);
+}
+.validity-bar.at-risk {
+  fill: var(--validity-risk);
+}
+.validity-bar.unlinked {
+  fill: var(--validity-unlinked);
+}
+.validity-gap-line {
+  stroke: var(--line);
+  stroke-width: 1;
+  stroke-dasharray: 3 4;
+}
+.validity-gap-label {
+  fill: var(--muted);
+  font-size: 14px;
+}
+.validity-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 10px;
+}
+.validity-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.validity-legend i.missing {
+  background: transparent;
+  border: 1px dashed var(--muted);
+}
+.validity-history table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 12px;
+  min-width: 570px;
+}
+.validity-history th,
+.validity-history td {
+  padding: 14px 12px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+.validity-history thead th {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 500;
+  background: var(--bg);
+}
+.validity-history tbody th {
+  font-weight: 500;
+}
+.validity-history tbody td {
+  font-variant-numeric: tabular-nums;
+}
+.validity-unfilled-row td {
+  color: var(--muted);
+}
+.validity-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+}
+@media (max-width: 1100px) {
+  .validity-summary {
+    gap: 12px;
+  }
+  .validity-summary .panel {
+    padding: 18px 14px;
+  }
+  .validity-summary strong {
+    font-size: 21px;
+  }
+  .validity-summary svg {
+    display: none;
+  }
+}
+@media (max-width: 800px) {
+  .validity-inputs {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .validity-form-footer {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+  .validity-summary,
+  .validity-metric-cards {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  .validity-summary .panel {
+    gap: 13px;
+  }
+  .validity-summary svg {
+    display: block;
+  }
+  .validity-summary strong {
+    font-size: 24px;
+  }
+  .validity-page .page-heading {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 18px;
+  }
+  .validity-page .page-heading .field {
+    width: 100%;
+  }
+  .validity-metric-card > strong {
+    font-size: 32px;
+  }
+  .validity-readonly-values {
+    gap: 12px;
+  }
+  .validity-readonly-values span {
+    font-size: 10px;
+  }
+  .validity-readonly-values strong {
+    font-size: 22px;
+  }
+}

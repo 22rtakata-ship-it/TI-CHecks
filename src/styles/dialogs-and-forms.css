@@ -1,0 +1,115 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: #0b202a75;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 50px 20px;
+  backdrop-filter: blur(3px);
+}
+.modal {
+  max-width: 670px;
+  width: 100%;
+  background: var(--panel);
+  padding: 27px;
+  border-radius: 13px;
+  box-shadow: 0 20px 70px #0003;
+}
+.modal > header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+}
+.modal > header h2 {
+  font-size: 21px;
+  margin: 0;
+}
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin-bottom: 17px;
+  min-width: 0;
+}
+.field > label {
+  font-size: 12px;
+  font-weight: 500;
+}
+input,
+select,
+textarea {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  background: var(--panel);
+  color: var(--text);
+  padding: 10px 11px;
+  max-width: 100%;
+  min-width: 0;
+}
+textarea {
+  resize: vertical;
+  min-height: 75px;
+}
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #187d6950;
+  border-color: var(--accent);
+}
+input[type="checkbox"] {
+  accent-color: var(--accent);
+  width: 16px;
+  height: 16px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+.form-hint {
+  font-size: 11px;
+  color: var(--muted);
+  margin-bottom: 16px;
+}
+.form-footer {
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.form-footer span {
+  font-size: 10px;
+  color: var(--muted);
+}
+details {
+  border: 1px solid var(--line);
+  padding: 14px;
+  border-radius: 7px;
+  margin: 16px 0;
+}
+summary {
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--accent);
+  font-weight: 500;
+}
+details[open] summary {
+  margin-bottom: 18px;
+}
+.check-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 12px;
+  margin: 16px 0;
+}
+.error {
+  font-size: 12px;
+  color: #c74545;
+}

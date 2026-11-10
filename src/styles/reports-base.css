@@ -1,0 +1,54 @@
+.export-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+.export-bar button {
+  font-size: 12px;
+}
+.report {
+  padding: 40px;
+  max-width: 950px;
+}
+.report > p {
+  color: var(--muted);
+}
+.report textarea {
+  width: 100%;
+  font-size: 13px;
+}
+.report h3 {
+  margin-top: 27px;
+}
+.report-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 25px 0;
+  border-block: 1px solid var(--line);
+  padding: 18px 0;
+}
+.report-stats span {
+  font-size: 11px;
+  color: var(--muted);
+}
+.report-stats b {
+  display: block;
+  font-size: 22px;
+  color: var(--text);
+}
+.report-entry {
+  padding: 15px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+.report-entry .badge {
+  margin-left: 12px;
+}
+.report-entry p {
+  margin: 8px 0;
+}
+.print-only {
+  display: none;
+}

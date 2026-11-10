@@ -1,0 +1,79 @@
+.checklist-row {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 16px 0;
+  border-top: 1px solid var(--line);
+}
+.checklist-row:last-child {
+  padding-bottom: 0;
+}
+.check-icon {
+  width: 29px;
+  height: 29px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  display: grid;
+  place-items: center;
+  color: #c6d1cb;
+}
+.check-icon.done {
+  background: var(--accent-bg);
+  color: var(--accent);
+  border-color: var(--accent-bg);
+}
+.checklist-row strong {
+  font-size: 12px;
+  font-weight: 500;
+}
+.checklist-row small {
+  display: block;
+  font-size: 10px;
+  margin-top: 3px;
+}
+.badge {
+  font-size: 9px;
+  line-height: 1.5;
+  border-radius: 5px;
+  padding: 4px 8px;
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+  background: var(--bg);
+  color: var(--muted);
+  font-weight: 500;
+}
+.badge:before {
+  content: "";
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: currentColor;
+  margin-right: 5px;
+}
+.badge.green {
+  background: #eaf5ee;
+  color: #27885c;
+}
+.badge.amber {
+  background: #fff5e3;
+  color: #ab7d2a;
+}
+.badge.blue {
+  background: #edf2fb;
+  color: #4976aa;
+}
+.badge.muted {
+  background: var(--bg);
+  border: 1px solid var(--line);
+}
+.text-button {
+  border-color: transparent;
+  background: transparent;
+  color: var(--accent);
+  font-size: 11px;
+  padding: 4px 5px;
+}
+.spaced {
+  margin-top: 29px;
+}

@@ -1,0 +1,23 @@
+:root {
+  --bg: #f6f8fa;
+  --panel: #fff;
+  --text: #233242;
+  --muted: #7c8794;
+  --line: #e7ebef;
+  --accent: #187d69;
+  --accent-bg: #eaf5f0;
+  --sidebar: #fff;
+  --shadow: 0 2px 4px #172b3c03;
+  color-scheme: light;
+}
+[data-theme="dark"] {
+  --bg: #11191f;
+  --panel: #1a242d;
+  --text: #e1e9ee;
+  --muted: #95a5b3;
+  --line: #2c3943;
+  --accent: #60cfac;
+  --accent-bg: #203e35;
+  --sidebar: #172129;
+  color-scheme: dark;
+}

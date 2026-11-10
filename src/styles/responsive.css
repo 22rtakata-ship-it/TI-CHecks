@@ -1,0 +1,184 @@
+@media (min-width: 1600px) {
+  .content {
+    padding-top: 38px;
+  }
+}
+@media (max-width: 1100px) {
+  .sidebar {
+    width: 215px;
+    padding-inline: 14px;
+  }
+  .main-area {
+    margin-left: 215px;
+    width: calc(100% - 215px);
+  }
+  .content {
+    padding: 25px 24px 0;
+  }
+  .topbar {
+    padding: 0 24px;
+  }
+  .stats-grid {
+    gap: 10px;
+  }
+  .stat-card {
+    padding: 15px;
+  }
+  .stat-card > svg {
+    display: none;
+  }
+  .date-controls input {
+    max-width: 120px;
+  }
+  .date-bar {
+    padding: 16px;
+  }
+  .date-bar h2 {
+    font-size: 16px;
+  }
+}
+@media (max-width: 800px) {
+  .sidebar {
+    transform: translateX(-100%);
+    transition: transform 0.2s;
+  }
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 10px 0 40px #0003;
+  }
+  .main-area {
+    margin: 0;
+    width: 100%;
+  }
+  .mobile-menu {
+    display: inline-flex;
+  }
+  .topbar {
+    height: 62px;
+    padding: 0 16px;
+  }
+  .breadcrumb > span {
+    display: none;
+  }
+  .top-actions {
+    gap: 7px;
+  }
+  .top-actions select {
+    max-width: 155px;
+  }
+  .content {
+    padding: 20px 17px 0;
+  }
+  .demo-banner {
+    flex-wrap: wrap;
+    font-size: 9px;
+    gap: 5px;
+  }
+  .demo-banner > span:last-child {
+    flex-basis: 100%;
+  }
+  .page-heading h1 {
+    font-size: 24px;
+  }
+  .page-heading .primary {
+    padding: 10px;
+    font-size: 11px;
+  }
+  .lead {
+    font-size: 11px;
+  }
+  .date-bar {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .date-controls {
+    flex-basis: 100%;
+    justify-content: flex-end;
+    border-top: 1px solid var(--line);
+    padding-top: 12px;
+  }
+  .date-controls input {
+    max-width: 170px;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .stat-card strong {
+    font-size: 24px;
+  }
+  .panel {
+    padding: 18px;
+  }
+  .section-heading .subtle {
+    display: none;
+  }
+  .checklist-row {
+    gap: 9px;
+    flex-wrap: wrap;
+  }
+  .checklist-row .grow {
+    min-width: 145px;
+  }
+  .checklist-row .badge {
+    margin-left: 38px;
+  }
+  .checklist-row .text-button {
+    margin-left: auto;
+  }
+  .checklist-row strong {
+    font-size: 11px;
+  }
+  .two-columns,
+  .incident-list {
+    grid-template-columns: 1fr;
+  }
+  .activity-card {
+    padding: 15px;
+    gap: 10px;
+  }
+  .activity-symbol {
+    display: none;
+  }
+  .activity-foot {
+    gap: 7px;
+    flex-wrap: wrap;
+  }
+  .page-footer {
+    gap: 10px;
+  }
+  .page-footer span:last-child {
+    display: none;
+  }
+  .overlay {
+    padding: 15px 10px;
+  }
+  .modal {
+    padding: 22px 18px;
+  }
+  .form-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+  .report {
+    padding: 23px;
+  }
+  .report-stats {
+    grid-template-columns: 1fr 1fr;
+  }
+  .list-row {
+    flex-wrap: wrap;
+  }
+  .list-row .grow {
+    flex-basis: 65%;
+  }
+  .top-actions > svg {
+    display: none;
+  }
+  .form-footer {
+    gap: 10px;
+  }
+  .loading {
+    padding: 35px 15px;
+  }
+}

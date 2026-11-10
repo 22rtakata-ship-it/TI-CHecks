@@ -1,0 +1,46 @@
+@media print {
+  .sidebar,
+  .topbar,
+  .demo-banner,
+  .page-heading,
+  .lead,
+  .export-bar,
+  .toast,
+  .page-footer,
+  .no-print {
+    display: none !important;
+  }
+  .main-area {
+    margin: 0;
+    width: 100%;
+  }
+  .content {
+    padding: 0;
+    max-width: none;
+  }
+  .panel.report {
+    border: 0;
+    box-shadow: none;
+    max-width: none;
+    padding: 0;
+  }
+  .print-only {
+    display: block;
+  }
+  .report-entry {
+    break-inside: avoid;
+  }
+  body {
+    background: white;
+    color: black;
+  }
+  .report {
+    --text: #222;
+    --muted: #666;
+    --line: #ddd;
+    --panel: white;
+  }
+  .report-stats {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

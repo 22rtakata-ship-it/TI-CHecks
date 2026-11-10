@@ -84,14 +84,14 @@ Para futuras alterações com Codex, leia [AGENTS.md](AGENTS.md) e [PROJECT_MAP.
 
 Acesse https://ti-log.vercel.app. A publicação atual está conectada ao Supabase e exige login. O primeiro acesso usa um convite para definir senha. A cópia de demonstração do mesmo navegador pode ser importada explicitamente em uma conta ainda sem histórico. Detalhes de publicação e futuras atualizações: [docs/DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
-## Atualização 0.2.0
+## Atualização 0.1.1
 
 Horas e minutos no diário/dashboard/relatórios, PDF claro ou escuro, remoção/restauração de ocorrências, categoria Celulares e busca de chamado normalizada. A duração continua sendo informada em minutos no formulário. Detalhes: [docs/RELEASE_0.2.0.md](docs/RELEASE_0.2.0.md).
 
-## Atualização 0.3.0
+## Atualização 0.1.2
 
 Não aplicáveis fora da porcentagem de checklist e em cor própria na barra. Consulta das datas não preenchidas. Remover ocorrência também oculta suas atividades vinculadas, mantendo restauração. Nova box Validades no diário de segunda a sexta e aba mensal com barras, histórico e comparação por loja. [Detalhes e arquivos](docs/RELEASE_0.3.0.md).
 
-## Atualização 0.4.0
+## Atualização 0.1.3
 
 Atividades com formulário simplificado, descrição, abertura de ocorrência e remoção/restauração. Acompanhamento com Status, Resolvido? e relato. Técnico com campos objetivos e N/A, ocorrências concluídas/pendentes em colunas e resumo com mês por extenso e linhas separadas. Dados anteriores preservados. [Detalhes e compatibilidade](docs/RELEASE_0.4.0.md). Estrutura reorganizada conforme [PROJECT_MAP.md](PROJECT_MAP.md) e [REFACTORING.md](docs/REFACTORING.md).

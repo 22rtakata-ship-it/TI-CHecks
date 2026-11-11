@@ -8,7 +8,7 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 <!-- END:nextjs-agent-rules -->
 
-# TI Log — orientações para futuras tarefas
+# TI Diário — orientações para futuras tarefas
 
 1. Consulte primeiro `PROJECT_MAP.md`, o mapa canônico na raiz. `docs/FEATURE_MAP.md` é um índice de compatibilidade.
 2. Identifique qual módulo será alterado antes de investigar código.
@@ -30,6 +30,8 @@ Identifique a feature na tabela de `PROJECT_MAP.md`, abra seus arquivos e testes
 Mantenha componentes de interface nas features ou no layout, regras nos serviços/workflows/seletores, estado e efeitos nos hooks e acesso a dados em `src/lib`. Não crie abstrações, dependências ou fachadas extras sem necessidade. Tipos não importam componentes; serviços não importam interface. Preserve os caminhos públicos reexportados enquanto houver consumidores.
 
 O layout coordena uma gravação por operação e só atualiza a memória após confirmação. Preserve a revisão por proprietário, a proteção contra salvamentos simultâneos e o encerramento dos formulários ao trocar conta. Nunca use número de chamado para inferir vínculo de ocorrência; use `incidentId`. NA não entra no denominador dos checklists; registro de validade ausente não equivale a zero. Migrações aplicadas são imutáveis.
+
+Títulos padrão são opções de preenchimento, sem alterar títulos históricos ao editar/remover o catálogo. Preserve o snapshot de prefixo/complemento dos registros e o título livre dos legados; não divida títulos antigos automaticamente. Mudanças de marca não devem renomear chaves locais, RPCs ou identificadores de dados existentes.
 
 Em refatorações estruturais, preserve texto, DOM, classes, ordem da cascata CSS, regras e formatos persistidos. Faça extrações incrementais e valide cada responsabilidade movida. Corrija os erros introduzidos antes de considerar a tarefa concluída. Ao finalizar, informe os arquivos alterados, validações executadas e limitações reais.
 

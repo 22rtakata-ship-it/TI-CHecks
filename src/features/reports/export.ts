@@ -16,7 +16,7 @@ export async function exportSpreadsheet(
   );
   const link = document.createElement("a");
   link.href = url;
-  link.download = `ti-log-${month}.xlsx`;
+  link.download = `ti-diario-${month}.xlsx`;
   link.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
 }

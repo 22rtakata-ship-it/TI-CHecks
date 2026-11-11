@@ -293,6 +293,9 @@
 .report-entry > p {
   white-space: pre-wrap;
 }
+.reports-page .report-entry {
+  overflow-wrap: anywhere;
+}
 .report-incident-columns {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));

@@ -10,6 +10,7 @@ export function initialData(): AppData {
   return {
     version: 1,
     validityRecords: [],
+    titlePresets: [],
     activities: [],
     incidents: [],
     executions: [],

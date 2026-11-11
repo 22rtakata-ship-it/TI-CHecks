@@ -114,7 +114,7 @@ test("diário, atividade rápida, persistência, ocorrência e checklist", async
     .getByRole("button", { name: "Exportar XLSX", exact: true })
     .click();
   const download = await downloadPromise;
-  expect(download.suggestedFilename()).toBe("ti-log-2027-01.xlsx");
+  expect(download.suggestedFilename()).toBe("ti-diario-2027-01.xlsx");
   const workbook = new ExcelJS.Workbook();
   await workbook.xlsx.readFile((await download.path())!);
   expect(workbook.worksheets.map((s) => s.name)).toEqual([

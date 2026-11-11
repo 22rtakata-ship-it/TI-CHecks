@@ -10,6 +10,14 @@
   border-radius: 9px;
   padding: 20px;
 }
+.activity-card[class*="status-"],
+.incident-card[class*="status-"] {
+  border-inline-start: 3px solid var(--status-line);
+}
+.activity-card[class*="status-"] .activity-symbol {
+  color: var(--status-color);
+  background: var(--status-bg);
+}
 .activity-symbol {
   width: 36px;
   height: 36px;
@@ -28,6 +36,7 @@
   margin-bottom: 6px;
 }
 .activity-card h3 {
+  overflow-wrap: anywhere;
   font-weight: 600;
   font-size: 13px;
   margin: 0 0 5px;
@@ -42,6 +51,7 @@
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-wrap: wrap;
 }
 .activity-foot > span:not(.badge) {
   font-size: 10px;
@@ -82,11 +92,15 @@
   grid-column: 1/-1;
 }
 .incident-card {
+  min-width: 0;
   background: var(--panel);
   border: 1px solid var(--line);
   border-top: 2px solid #ddb268;
   border-radius: 9px;
   padding: 19px;
+}
+.incident-card[class*="status-"] {
+  border-top-color: var(--line);
 }
 .incident-top {
   display: flex;
@@ -100,9 +114,11 @@
   letter-spacing: 1px;
 }
 .incident-card h3 {
+  overflow-wrap: anywhere;
   font-size: 13px;
 }
 .incident-card p {
+  overflow-wrap: anywhere;
   font-size: 11px;
   color: var(--muted);
   white-space: pre-wrap;
@@ -113,6 +129,53 @@
   justify-content: space-between;
   border-top: 1px solid var(--line);
   padding-top: 11px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+.incident-card-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  font-size: 10px;
+  color: var(--muted);
+}
+.ticket-copy-control {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 3px;
+  max-width: 100%;
+}
+.ticket-copy {
+  padding: 3px 6px;
+  gap: 6px;
+  border-radius: 4px;
+  background: transparent;
+  font-size: 10px;
+  color: var(--text);
+  max-width: 100%;
+}
+.ticket-copy-number {
+  min-width: 0;
+  overflow-wrap: anywhere;
+  text-align: left;
+}
+.ticket-copy svg {
+  flex-shrink: 0;
+}
+.ticket-copy-feedback {
+  color: var(--accent);
+  font-size: 10px;
+}
+.ticket-copy-feedback:empty {
+  display: none;
+}
+.ticket-copy-feedback.copy-error {
+  color: #b4232b;
+}
+[data-theme="dark"] .ticket-copy-feedback.copy-error {
+  color: #ffa5ac;
 }
 .card-bottom > span {
   font-size: 9px;

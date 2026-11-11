@@ -36,7 +36,7 @@ export function useReportExport({
   async function copyEmailText() {
     try {
       await navigator.clipboard.writeText(
-        `Relatório TI Log — ${reportMonthLabel(month)}\n${text}\nPendências: ${pending.map((i) => i.title).join("; ") || "Nenhuma registrada."}`,
+        `Relatório TI Diário — ${reportMonthLabel(month)}\n${text}\nPendências: ${pending.map((i) => i.title).join("; ") || "Nenhuma registrada."}`,
       );
       setNotice("Texto para e-mail copiado.");
     } catch {

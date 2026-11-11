@@ -4,6 +4,8 @@ import type { Activity, AppData } from "@/types/domain";
 import { id, statuses, stores } from "@/lib/date";
 import { Field } from "@/components/ui/shared";
 import { activityDescription } from "./description";
+import { ActivityTitleFields } from "./ActivityTitleFields";
+import { activityTitleForSave, initialActivityTitle } from "./title-fields";
 export function ActivityForm({
   data,
   date,
@@ -26,6 +28,9 @@ export function ActivityForm({
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
   const [createIncident, setCreateIncident] = useState(false);
+  const [titleDraft, setTitleDraft] = useState(() =>
+    initialActivityTitle(existing),
+  );
   return (
     <form
       onSubmit={async (e) => {
@@ -42,7 +47,7 @@ export function ActivityForm({
               createdAt: existing?.createdAt || new Date().toISOString(),
               date: val("date"),
               store: val("store"),
-              title: val("title").trim(),
+              ...activityTitleForSave(titleDraft),
               category: val("category"),
               sector: val("sector"),
               equipment: existing?.equipment || "",
@@ -90,16 +95,13 @@ export function ActivityForm({
           </select>
         </Field>
       </div>
-      <Field label="Título da atividade *">
-        <input
-          name="title"
-          autoFocus
-          required
-          maxLength={180}
-          placeholder="Ex.: Religamento das TVs do açougue"
-          defaultValue={existing?.title}
-        />
-      </Field>
+      <ActivityTitleFields
+        presets={data.titlePresets || []}
+        existing={existing}
+        draft={titleDraft}
+        onChange={setTitleDraft}
+        disabled={busy}
+      />
       <div className="form-grid">
         <Field label="Categoria *">
           <select

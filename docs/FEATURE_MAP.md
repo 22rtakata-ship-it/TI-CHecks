@@ -12,7 +12,7 @@ O mapa canônico agora fica em **[PROJECT_MAP.md](../PROJECT_MAP.md)**, na raiz.
 | Indicadores                                   | `src/features/reports/dashboard/`                       | Mapa: Dashboard técnico                                    |
 | Relatórios, impressão e planilha              | `src/features/reports/report/` e serviços em `reports/` | Mapa: Relatórios e exportação                              |
 | Anexos privados                               | `src/features/evidence/`                                | Mapa: Evidências privadas                                  |
-| Categorias e backup                           | `src/features/settings/`                                | Mapa: Configurações                                        |
+| Categorias, títulos padrão e backup           | `src/features/settings/`                                | Mapa: Configurações e miniupdate 0.1.4                     |
 | Login e senha                                 | `src/features/auth/`                                    | Mapa: Autenticação                                         |
 | Estado, sessão e composição                   | `src/components/layout/`                                | Mapa: Entrada; Sessão, gravação e navegação                |
 | Modal e campos                                | `src/components/ui/`                                    | Mapa: UI compartilhada                                     |

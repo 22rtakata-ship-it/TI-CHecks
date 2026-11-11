@@ -2,6 +2,7 @@
 import { useState } from "react";
 import type { AppData } from "@/types/domain";
 import { Field, SectionTitle } from "@/components/ui/shared";
+import { TitlePresetManager } from "./title-presets/TitlePresetManager";
 export function Settings({
   data,
   save,
@@ -87,7 +88,7 @@ export function Settings({
               );
               const a = document.createElement("a");
               a.href = url;
-              a.download = "ti-log-backup.json";
+              a.download = "ti-diario-backup.json";
               a.click();
               setTimeout(() => URL.revokeObjectURL(url), 1000);
             }}
@@ -101,6 +102,10 @@ export function Settings({
           </p>
         </section>
       </div>
+      <TitlePresetManager
+        presets={data.titlePresets || []}
+        save={(titlePresets) => save({ ...data, titlePresets })}
+      />
       {message && <p role="status">{message}</p>}
     </>
   );

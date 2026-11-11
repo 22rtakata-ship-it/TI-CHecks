@@ -26,7 +26,7 @@ export function ReportPreview({
 }) {
   return (
     <article className="panel report" data-pdf-theme={pdfTheme}>
-      <div className="eyebrow">TI LOG / {mode.toUpperCase()}</div>
+      <div className="eyebrow">TI DIÁRIO / {mode.toUpperCase()}</div>
       <h2>Relatório de atividades de TI</h2>
       <p>
         {reportMonthLabel(month)} · Loja {store}

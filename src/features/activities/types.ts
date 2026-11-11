@@ -5,6 +5,9 @@ export interface Activity {
   createdAt: string;
   store: string;
   title: string;
+  titlePresetId?: string;
+  titlePrefix?: string;
+  titleDetail?: string;
   description?: string;
   sector: string;
   category: string;

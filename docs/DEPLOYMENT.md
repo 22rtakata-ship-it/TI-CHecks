@@ -53,3 +53,13 @@ Deployment `dpl_CJDNUDE9yiZ1JzZtXLRajZngt8HL` confirmado **READY/PROMOTED**, com
 Chromium no domínio de produção, usando conta temporária isolada, confirmou: edição mantendo todos os campos legados/revisões, descrição nova sem duplicar eventos; criação sem chamado com ocorrência vinculada; resolução/reabertura com datas reais; upload privado; remoção persistida em nova sessão; restauração preservando atividade/ocorrência/anexo; seis campos técnicos e N/A; resumo com mês por extenso e seis linhas; concluídas/pendentes em colunas; horas numéricas e descrição no XLSX; PDF claro/escuro e layout móvel. Conta temporária e arquivo de teste removidos ao final. Nenhum teste gravou na conta do proprietário.
 
 Recarregue o site para receber a atualização. A nova organização do código e os arquivos responsáveis estão em `PROJECT_MAP.md`; comportamento e compatibilidade, em `RELEASE_0.4.0.md`. A aplicação publicada mantém o acesso e a persistência existentes.
+
+## TI Diário 0.1.4 — 11/11/2026
+
+Deployment `dpl_266q1niCLJETGppWvBXobT58L4Cj` confirmado **READY/PROMOTED**, nos mesmos aliases https://ti-log.vercel.app e https://ti-log-takas3.vercel.app. O nome do aplicativo agora é TI Diário; URLs, conta, banco e chaves de acesso existentes foram preservados. Foram enviados 115 arquivos de fonte/build, sem credenciais, cópias de dados ou arquivos de teste.
+
+Migração aditiva `202611110001_title_presets.sql` aplicada antes da publicação. O catálogo de títulos fica privado por proprietário e respeita clientes antigos que omitem a nova seção. Não houve reescrita de títulos ou payloads antigos.
+
+Chromium no domínio real, com conta temporária isolada, confirmou catálogo CRUD, título composto pesquisável, leitura em segunda sessão, histórico preservado após renomear/remover padrão, gravação legada sem apagar catálogo, cores dos cartões, cópia direta com retorno de erro, marca/favicon, XLSX com título original e layout móvel. Conta temporária e dados de teste removidos ao final. Nenhum teste utilizou a conta do proprietário.
+
+Recarregue o site para receber a nova marca e o favicon. Cadastre os prefixos em Configurações → Títulos padrão; o formulário mantém a opção de título livre. Notas: `RELEASE_0.1.4.md`.

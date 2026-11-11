@@ -44,7 +44,7 @@ export function Workspace() {
           <WorkspaceNotices controller={controller} />
           <WorkspacePages controller={controller} />
           <footer className="page-footer">
-            <span>TI Log · Seu diário técnico de trabalho</span>
+            <span>TI Diário · Seu diário técnico de trabalho</span>
             <span>Organização que faz a diferença.</span>
           </footer>
         </main>

@@ -20,6 +20,7 @@
 }
 .modal > header {
   display: flex;
+  gap: 14px;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 18px;
@@ -27,6 +28,14 @@
 .modal > header h2 {
   font-size: 21px;
   margin: 0;
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.modal > header .icon-button {
+  flex-shrink: 0;
+}
+.modal .history {
+  overflow-wrap: anywhere;
 }
 .field {
   display: flex;

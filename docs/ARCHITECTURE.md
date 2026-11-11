@@ -1,5 +1,7 @@
 # Arquitetura
 
+Nome atual do aplicativo: **TI Diário**. A numeração segue a convenção em `AGENTS.md`; a evolução atual é o miniupdate 0.1.4.
+
 Next.js App Router + React + TypeScript. CSS com variáveis semânticas foi utilizado em lugar de Tailwind para manter esta primeira interface sem dependências de utilitários. Lucide fornece os ícones, ExcelJS gera XLSX sob demanda. Componentes são organizados por funcionalidade; não há arquivo HTML/JS único com a aplicação.
 
 O ponto de entrada para manutenção é [PROJECT_MAP.md](../PROJECT_MAP.md). A organização segue responsabilidades dentro de cada feature, sem criar camadas globais de serviços ou estado de domínio.
@@ -25,3 +27,7 @@ Concluir uma atividade vinculada não conclui a ocorrência. Mudanças de status
 Armazenamento privado só no Supabase. A aplicação não armazena binários no documento nem no localStorage. Anexos são limitados a 10 MB e tipos permitidos tanto no cliente quanto no bucket. Links assinados duram 60 segundos. Ainda é necessário validar MIME por conteúdo/antivírus no servidor antes de ampliar o uso a uploads de usuários não confiáveis. Metadados e objetos de storage não compartilham transação: falhas parciais de remoção podem exigir reconciliação administrativa. Não há promessa de atomicidade entre esses dois serviços.
 
 Evolução prevista: endpoints incrementais por entidade, paginação, políticas por equipe/loja, migrações de versão do payload e testes reais do serviço Supabase. Preserve contratos de dados e autorização ao expandir; não refatore funcionalidades sem relação com a tarefa.
+
+Títulos padrão pertencem a `features/settings/title-presets/`: regras puras, contrato e administração do catálogo. `activities/title-fields.ts` prepara o título composto e os metadados; `ActivityTitleFields.tsx` apresenta seleção, complemento e prévia. O texto completo permanece em `Activity.title`, sem dependência de existência do modelo. Edições usam o snapshot salvo, preservando o histórico após renomear/remover padrões; títulos legados nunca são divididos automaticamente. A persistência adiciona uma coluna ao workspace do proprietário e mantém a revisão transacional, preservando campos opcionais omitidos por clientes antigos.
+
+`CopyTicketButton`, `TechnicalStatusBadge` e `statusPresentation` são componentes/regras de apresentação compartilhados entre cartões de atividades e ocorrências. A confirmação de cópia depende do resultado assíncrono do navegador. As cores técnicas não alteram estados ou métricas dos checklists. `BrandMark` e o favicon representam a marca nova; nomes de storage e identificadores de infraestrutura permanecem compatíveis.

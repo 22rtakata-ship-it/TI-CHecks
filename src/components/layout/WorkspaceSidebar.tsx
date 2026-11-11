@@ -1,7 +1,8 @@
 "use client";
 
-import { Settings2, ShieldCheck } from "lucide-react";
+import { Settings2, ShieldCheck, UserRound } from "lucide-react";
 import { supabase } from "@/lib/supabase";
+import { BrandMark } from "@/components/ui/BrandMark";
 import { links } from "./navigation";
 import type { WorkspaceController } from "./useWorkspaceController";
 
@@ -14,9 +15,9 @@ export function WorkspaceSidebar({ controller }: WorkspaceSidebarProps) {
   return (
     <aside className={menu ? "sidebar open" : "sidebar"}>
       <a className="brand" href="#diario" onClick={() => navigate("diario")}>
-        <span className="brand-mark">TI</span>
+        <BrandMark />
         <span>
-          TI Log<small>GESTÃO DE ATIVIDADES</small>
+          TI Diário<small>REGISTRO TÉCNICO</small>
         </span>
       </a>
       <div className="nav-label">ÁREA DE TRABALHO</div>
@@ -53,7 +54,9 @@ export function WorkspaceSidebar({ controller }: WorkspaceSidebarProps) {
           </div>
         </div>
         <button className="profile" onClick={() => navigate("configuracoes")}>
-          <span className="avatar">TI</span>
+          <span className="avatar">
+            <UserRound size={16} aria-hidden="true" />
+          </span>
           <span>
             <strong>Assistente de TI</strong>
             <small>

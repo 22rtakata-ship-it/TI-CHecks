@@ -67,6 +67,55 @@
   background: var(--bg);
   border: 1px solid var(--line);
 }
+.status-pending {
+  --status-color: #b4232b;
+  --status-bg: #fff0f1;
+  --status-line: #d64049;
+}
+.status-completed {
+  --status-color: #176f43;
+  --status-bg: #eaf6ed;
+  --status-line: #27885c;
+}
+.status-progress {
+  --status-color: #806000;
+  --status-bg: #fff5ce;
+  --status-line: #b1870b;
+}
+.status-waiting {
+  --status-color: #245fa5;
+  --status-bg: #eaf2fd;
+  --status-line: #3a7ac4;
+}
+[data-theme="dark"] .status-pending {
+  --status-color: #ffa5ac;
+  --status-bg: #43272e;
+  --status-line: #ed7580;
+}
+[data-theme="dark"] .status-completed {
+  --status-color: #93dfb2;
+  --status-bg: #203e31;
+  --status-line: #54bd86;
+}
+[data-theme="dark"] .status-progress {
+  --status-color: #f0d16d;
+  --status-bg: #403820;
+  --status-line: #d7b643;
+}
+[data-theme="dark"] .status-waiting {
+  --status-color: #9dc6ff;
+  --status-bg: #24354c;
+  --status-line: #6b9fe5;
+}
+.technical-status-badge {
+  background: var(--status-bg);
+  color: var(--status-color);
+}
+.technical-status-badge.status-removed {
+  background: var(--bg);
+  color: var(--muted);
+  border: 1px solid var(--line);
+}
 .text-button {
   border-color: transparent;
   background: transparent;

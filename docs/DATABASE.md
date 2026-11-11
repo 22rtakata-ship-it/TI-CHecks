@@ -1,6 +1,6 @@
 # Banco de dados e Supabase
 
-Em projeto Supabase **novo**, aplique todos os arquivos de `supabase/migrations/` em ordem de nome: schema inicial, proteções de workspace, categoria Celulares e validades. Em projeto existente, aplique somente as migrações ainda não aplicadas. Não execute novamente sobre schema já migrado: futuras alterações devem ser novas migrações. Não há necessidade de service_role no cliente.
+Em projeto Supabase **novo**, aplique todos os arquivos de `supabase/migrations/` em ordem de nome: schema inicial, proteções de workspace, categoria Celulares, validades e títulos padrão. Em projeto existente, aplique somente as migrações ainda não aplicadas. Não execute novamente sobre schema já migrado: futuras alterações devem ser novas migrações. Não há necessidade de service_role no cliente.
 
 | Entidade              | Tabela / modelagem                                                                                                                       |
 | --------------------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
@@ -55,3 +55,11 @@ Ocorrências removidas continuam guardadas com deletedAt. A partir desta versão
 Atividades aceitam `description?: string` e `deletedAt?: string` no payload JSONB existente. Não exigem migração: a RPC preserva o documento por registro. A descrição nova tem precedência; registros anteriores sem esse campo usam os textos legados para exibição. Edições espalham o payload existente antes dos valores novos, preservando campos anteriores e propriedades desconhecidas.
 
 Remover atividade marca `deletedAt`, sem apagar linha, revisão, ocorrência, evento ou evidência; restaurar remove a marca. As consultas de interface usam `activities/visibility.ts`. No acompanhamento de ocorrência, Resolvido? é derivado do status do evento, sem flag redundante no banco. `tests/database.test.ts` confirma o roundtrip conjunto de novos campos, campos legados e vínculo de ocorrência sob a RPC atual.
+
+## Títulos padrão — 0.1.4
+
+A migração `202611110001_title_presets.sql` adiciona `workspace_settings.title_presets` (JSONB, padrão `[]`) à configuração privada de cada proprietário. O catálogo contém `{id: UUID, name: string}`; a constraint valida tipo, IDs, nomes e duplicação por nome normalizado, incluindo acentos decompostos. As políticas RLS da tabela continuam em vigor.
+
+`load_workspace` retorna `titlePresets`; `save_workspace` só o substitui quando a lista está presente no documento. Omissão preserva dados de clientes antigos, enquanto `[]` remove o catálogo explicitamente. Validades, revisão otimista, transação e autorização permanecem no mesmo contrato. A normalização local preenche ausência com `[]` sem reescrever outras propriedades.
+
+Atividades guardam o título completo e, opcionalmente, `titlePresetId`, `titlePrefix` e `titleDetail` em seu payload existente. O ID do padrão é uma referência histórica sem foreign key: excluir/renomear o padrão não apaga nem renomeia atividade ou ocorrência. A migração não atualiza payloads ou revisões de registros existentes.

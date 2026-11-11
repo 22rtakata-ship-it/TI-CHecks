@@ -86,3 +86,20 @@ Os testes de comparação visual usam fixtures locais sintéticas. O baseline de
 Validação remota 0.4.0 concluída em https://ti-log.vercel.app após READY/PROMOTED. Conta sintética isolada confirmou preservação de campos legados/revisões, nenhuma duplicação de eventos ao editar, atividade sem chamado, ocorrência vinculada, resolução/reabertura datada e relato obrigatório. Upload privado, remoção persistida em segunda sessão e restauração preservaram payload e evidência. Conferidos seis campos/N/A, resumo com mês por extenso e linhas, datas/status nas colunas, horas no dashboard, XLSX com horas numéricas e descrição, os dois temas de PDF e responsividade. Wrapper confirmou remoção da conta e dos objetos de teste. Não foi utilizada a conta real do proprietário.
 
 Conferência final após limpeza: contagens e fingerprints de atividades, ocorrências, modelos, execuções e evidências permaneceram iguais à referência anterior à publicação. Nenhum conteúdo corporativo foi exibido nessa conferência. Validades não integravam esse conjunto de fingerprints; o código de sua persistência e as migrações não foram alterados.
+
+## Miniupdate 0.1.4 — TI Diário — 11/11/2026
+
+- `npm test`: **135 testes em 15 arquivos passaram**. Cobertura de títulos compostos, limite, duplicação sem acentos/caixa/espaços, snapshots históricos, edição de legado e persistência SQL/RLS do catálogo.
+- `npm run typecheck` e `npm run build`: passaram; pacote final gerado após as correções visuais.
+- `npm run test:browser`: **24 testes passaram**. Inclui CRUD de padrões, recarregamento, busca, edição histórica após renomear/remover, quatro cores nos dois temas, cópia com sucesso/falha/espera, marca/favicon, backup e título de 180 caracteres no celular. Os fluxos existentes de checklist, validades, remoção/restauração, PDF e XLSX continuam passando.
+- Revisão visual com fixtures locais: cadastro, formulário e cartões legíveis em desktop/celular e nos dois temas. Mais **16 capturas finais de título-limite** sem overflow nem erros de página. Contraste dos badges entre **5,35:1 e 5,90:1** no claro e **7,08:1 e 7,78:1** no escuro. Clipboard local confirmou cópia sem abrir modal.
+- Problemas encontrados e corrigidos: o seletor de erro de cópia foi limitado ao componente para distinguir o announcer interno do Next.js; prefixos longos sem espaços passaram a quebrar corretamente na prévia, cartões, cabeçalho/histórico do modal e relatório. O conteúdo completo é preservado.
+- Prettier dos arquivos da alteração e `git diff --check`: passaram. Nenhuma dependência nova.
+
+Migração `202611110001_title_presets.sql` aplicada ao Supabase real em transação, sem reescrever payloads anteriores. Comparação de contagens/fingerprints de sete conjuntos detectou uma atualização de ocorrência e incremento de revisão durante o uso. A reconstrução da referência anterior exclusivamente para comparação por digest confirmou os históricos anteriores preservados, com um novo evento e revisão incrementada em 1; nenhum dado foi revertido. Atividades, modelos, execuções, evidências e validades mantiveram os fingerprints. Nenhum conteúdo corporativo foi exibido nessa conferência.
+
+A verificação da aplicação publicada usa conta temporária isolada e é registrada abaixo após execução. Testes e screenshots locais usam somente fixtures sintéticas.
+
+Validação remota 0.1.4 concluída após **READY/PROMOTED** no domínio real. Conta sintética isolada confirmou: CRUD do catálogo; título composto pesquisável; padrão carregado em segunda sessão; títulos/histórico preservados após renomear/remover o padrão e editar outro campo; payloads legados preservados; salvamento de cliente antigo sem apagar catálogo; quatro cores nos cartões; cópia direta e erro de clipboard; marca/favicon; XLSX com nome novo e título original; cartões responsivos. O wrapper confirmou a remoção da conta de teste. Nenhum teste gravou na conta do proprietário.
+
+Conferência após limpeza: os sete conjuntos mantiveram contagens e fingerprints idênticos à referência posterior à migração, incluindo a atualização legítima feita durante o uso. Nenhuma gravação foi revertida para forçar igualdade.

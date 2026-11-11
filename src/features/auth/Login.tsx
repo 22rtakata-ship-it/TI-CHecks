@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Field } from "@/components/ui/shared";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 export function Login() {
   const [mode, setMode] = useState<"login" | "recover">("login");
@@ -20,8 +21,8 @@ export function Login() {
   return (
     <main className="login">
       <div className="login-card">
-        <div className="brand-mark">TI</div>
-        <h1>{recovering ? "Recuperar acesso" : "Bem-vindo ao TI Log"}</h1>
+        <BrandMark />
+        <h1>{recovering ? "Recuperar acesso" : "Bem-vindo ao TI Diário"}</h1>
         <p>
           {recovering
             ? "Informe seu e-mail para receber um link e definir uma nova senha."

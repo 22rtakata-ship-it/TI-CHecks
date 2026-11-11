@@ -16,31 +16,24 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   text-decoration: none;
   color: var(--text);
-  font-size: 24px;
-  font-weight: 750;
-  letter-spacing: -0.7px;
-  margin: 0 10px 44px;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: -0.4px;
+  margin: 0 4px 44px;
 }
 .brand-mark {
-  background: #187d69;
-  color: #fff;
-  border-radius: 11px;
   width: 42px;
-  height: 42px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 19px;
-  font-weight: 700;
-  letter-spacing: -1px;
+  height: 46px;
+  display: block;
+  flex: 0 0 auto;
 }
 .brand small {
   display: block;
   font-size: 8px;
-  letter-spacing: 1.3px;
+  letter-spacing: 1.1px;
   line-height: 1.8;
 }
 .nav-label {

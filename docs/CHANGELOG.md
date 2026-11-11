@@ -1,5 +1,9 @@
 # Histórico
 
+## 0.1.4 — 11/11/2026
+
+Marca TI Diário e novo ícone vetorial. Títulos padrão com cadastro/edição/remoção nas Configurações, seleção no formulário, prévia e snapshot que preserva títulos antigos. Persistência privada com migração aditiva e compatibilidade de clientes anteriores. Cartões por status em vermelho/verde/amarelo/azul e botão para copiar o chamado sem abrir o registro. Detalhes em `RELEASE_0.1.4.md`.
+
 ## v0.1.3 — primeira versão no GitHub — 10/11/2026
 
 Primeiro snapshot versionado do repositório, reunindo o código atual já validado: diário, atividades, ocorrências, checklists, validades, evidências privadas, dashboard, relatórios, configurações e autenticação. Inclui arquitetura modular, PROJECT_MAP.md, AGENTS.md, migrações e testes. A versão inicial do Git foi definida como 0.1.3 pelo proprietário; as seções abaixo registram etapas de desenvolvimento e publicações anteriores na Vercel, não tags Git preexistentes. Não houve alteração funcional ou migração nesta publicação. Detalhes em `RELEASE_0.1.3.md`.

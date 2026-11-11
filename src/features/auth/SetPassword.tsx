@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
 import { Field } from "@/components/ui/shared";
+import { BrandMark } from "@/components/ui/BrandMark";
 
 export function SetPassword({ onComplete }: { onComplete: () => void }) {
   const [message, setMessage] = useState("");
@@ -11,7 +12,7 @@ export function SetPassword({ onComplete }: { onComplete: () => void }) {
   return (
     <main className="login">
       <div className="login-card">
-        <div className="brand-mark">TI</div>
+        <BrandMark />
         <h1>{saved ? "Sua senha está pronta" : "Defina sua senha"}</h1>
         {saved ? (
           <>
@@ -27,7 +28,7 @@ export function SetPassword({ onComplete }: { onComplete: () => void }) {
           <>
             <p>
               Escolha uma senha com pelo menos 12 caracteres para proteger seu
-              acesso ao TI Log.
+              acesso ao TI Diário.
             </p>
             <form
               onSubmit={async (e) => {

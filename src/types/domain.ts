@@ -6,12 +6,14 @@ import type {
   ChecklistExecution,
 } from "@/features/checklists/types";
 import type { Evidence } from "@/features/evidence/types";
+import type { TitlePreset } from "@/features/settings/title-presets/types";
 export type * from "./shared";
 export type * from "@/features/validity/types";
 export type * from "@/features/activities/types";
 export type * from "@/features/incidents/types";
 export type * from "@/features/checklists/types";
 export type * from "@/features/evidence/types";
+export type * from "@/features/settings/title-presets/types";
 export interface AppData {
   version: 1;
   validityRecords: ValidityRecord[];
@@ -21,4 +23,5 @@ export interface AppData {
   executions: ChecklistExecution[];
   evidence: Evidence[];
   categories: string[];
+  titlePresets?: TitlePreset[];
 }

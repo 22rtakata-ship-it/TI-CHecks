@@ -3,7 +3,10 @@
 import { ArrowUpRight, CircleDot, Clock3 } from "lucide-react";
 import type { Activity } from "@/types/domain";
 import { formatDuration } from "@/lib/duration";
-import { Badge, Empty } from "@/components/ui/shared";
+import { Empty } from "@/components/ui/shared";
+import { CopyTicketButton } from "@/components/ui/CopyTicketButton";
+import { TechnicalStatusBadge } from "@/components/ui/TechnicalStatusBadge";
+import { statusClassName } from "@/components/ui/statusPresentation";
 
 export function ActivityCards({
   activities,
@@ -16,7 +19,10 @@ export function ActivityCards({
     <div className="activity-list">
       {activities.length ? (
         activities.map((a) => (
-          <article className="activity-card" key={a.id}>
+          <article
+            className={`activity-card ${statusClassName(a.status)}`}
+            key={a.id}
+          >
             <div className="activity-symbol">
               <CircleDot size={20} />
             </div>
@@ -45,14 +51,14 @@ export function ActivityCards({
                 <p>{a.description ?? (a.result || a.procedure)}</p>
               )}
               <div className="activity-foot">
-                <Badge>{a.status}</Badge>
+                <TechnicalStatusBadge status={a.status} />
                 {a.minutes !== undefined && (
                   <span>
                     <Clock3 size={13} />
                     {formatDuration(a.minutes)}
                   </span>
                 )}
-                {a.ticket && <span>#{a.ticket}</span>}
+                <CopyTicketButton ticket={a.ticket} />
                 {a.incidentId && <span>Ocorrência vinculada</span>}
               </div>
             </div>

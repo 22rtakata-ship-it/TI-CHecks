@@ -1,6 +1,8 @@
-# TI Log
+# TI Diário
 
 Diário técnico de atividades de TI, com interface em português, arquitetura por funcionalidade, tema claro/escuro e layout responsivo.
+
+**Versão atual: `v0.1.4`**, em testes conforme a convenção do projeto. Nome do aplicativo: **TI Diário**.
 
 **Primeira versão no GitHub: `v0.1.3`.** Este snapshot reúne o código atual, incluindo a reorganização modular e os recursos entregues até agora. Os números 0.2.0, 0.3.0 e 0.4.0 nas anotações anteriores identificam etapas de desenvolvimento/publicações na Vercel, anteriores ao primeiro commit. A numeração inicial deste repositório foi definida como 0.1.3 pelo proprietário. Consulte [RELEASE_0.1.3.md](docs/RELEASE_0.1.3.md).
 
@@ -95,3 +97,7 @@ Não aplicáveis fora da porcentagem de checklist e em cor própria na barra. Co
 ## Atualização 0.1.3
 
 Atividades com formulário simplificado, descrição, abertura de ocorrência e remoção/restauração. Acompanhamento com Status, Resolvido? e relato. Técnico com campos objetivos e N/A, ocorrências concluídas/pendentes em colunas e resumo com mês por extenso e linhas separadas. Dados anteriores preservados. [Detalhes e compatibilidade](docs/RELEASE_0.4.0.md). Estrutura reorganizada conforme [PROJECT_MAP.md](PROJECT_MAP.md) e [REFACTORING.md](docs/REFACTORING.md).
+
+## Atualização 0.1.4
+
+TI Diário com novo ícone de diário técnico. Cadastro de títulos padrão em Configurações; no formulário, escolha um padrão e escreva o complemento, com prévia do título completo. Editar/remover o padrão preserva os títulos dos registros anteriores. Cartões com status em vermelho (Pendente), verde (Concluído), amarelo (Em andamento) e azul (Aguardando terceiros), além de cópia direta do chamado. [Detalhes, migração e compatibilidade](docs/RELEASE_0.1.4.md).

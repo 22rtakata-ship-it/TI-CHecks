@@ -3,6 +3,9 @@ import { useState } from "react";
 import { Trash2, RotateCcw } from "lucide-react";
 import type { AppData, Incident } from "@/types/domain";
 import { Badge, Modal, Empty } from "@/components/ui/shared";
+import { CopyTicketButton } from "@/components/ui/CopyTicketButton";
+import { TechnicalStatusBadge } from "@/components/ui/TechnicalStatusBadge";
+import { statusClassName } from "@/components/ui/statusPresentation";
 import { updateIncident, removeIncident, restoreIncident } from "./service";
 import { IncidentUpdateForm } from "./IncidentUpdateForm";
 export function IncidentPanel({
@@ -73,22 +76,28 @@ export function IncidentPanel({
         {visible.length ? (
           visible.map((i) => (
             <article
-              className={`incident-card ${i.deletedAt ? "incident-removed" : ""}`}
+              className={`incident-card ${i.deletedAt ? "incident-removed" : statusClassName(i.status)}`}
               key={i.id}
             >
               <div className="incident-top">
                 <span className="small-label">
                   DESDE {i.openedOn.split("-").reverse().join("/")}
                 </span>
-                <Badge>{i.deletedAt ? "Removida" : i.status}</Badge>
+                <TechnicalStatusBadge
+                  status={i.deletedAt ? "Removida" : i.status}
+                />
               </div>
               <h3>{i.title}</h3>
               <p>{i.events.at(-1)?.text}</p>
               <div className="card-bottom">
-                <span>
-                  {i.ticket ? `Chamado #${i.ticket}` : "Sem chamado"} ·{" "}
-                  {i.events.length} atualização(ões)
-                </span>
+                <div className="incident-card-meta">
+                  {i.ticket ? (
+                    <CopyTicketButton ticket={i.ticket} />
+                  ) : (
+                    <span>Sem chamado</span>
+                  )}
+                  <span>{i.events.length} atualização(ões)</span>
+                </div>
                 <button
                   className="text-button"
                   onClick={() => {
